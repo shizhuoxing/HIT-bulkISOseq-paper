@@ -1,2 +1,2 @@
 # HIT-bulkISOseq_paper
-test
+The scripts for analysis of HIT-bulkISOseq paper.
