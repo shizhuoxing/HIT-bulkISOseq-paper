@@ -5,12 +5,12 @@ The scripts for analysis of HIT-ISOseq paper.
 * ncbi-blast-2.2.26+ or later
 
 ## Deconcatenation of HIT-ISOseq CCS by primer blast
-### 3.1) cat ccs result in bam format
+### 1) cat ccs result in bam format
 ```
 samtools view ccs.bam > ccs.sam
 samtools view ccs.bam | awk '{print ">"$1"\n"$10}' > ccs.fa
 ```
-### 3.2) make primer blast to CCS
+### 2) make primer blast to CCS
 ```
 makeblastdb -in primer.fa -dbtype nucl
 blastn -query ccs.fa -db primer.fa -outfmt 7 -word_size 5 > mapped.m7
@@ -23,7 +23,7 @@ AAGCAGTGGTATCAACGCAGAGTACATGGGGGGGG
 >primer_S
 GTACTCTGCGTTGATACCACTGCTTACTAGT
 ```
-### 3.3) classify CCS by primer
+### 3) classify CCS by primer
 Here is an example for classifying CCS generate from PacBio official IsoSeq library construction protocol and `BGI patented multi-transcripts in one ZMW library construction protocol`.
 ```
 perl classify_by_primer.pl -blastm7 mapped.m7 -ccsfa ccs.fa -umilen 8 -min_primerlen 16 -min_isolen 50 -outdir ./ -sample sampleName
