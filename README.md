@@ -23,14 +23,6 @@ AAGCAGTGGTATCAACGCAGAGTACATGGGGGGGG
 >primer_S
 GTACTCTGCGTTGATACCACTGCTTACTAGT
 ```
-The following primer sequence is used by `BGI patented full-length polyA tail detection library construction protocol`.
-```
-$ cat primer.fa
->primer_F
-AAGCAGTGGTATCAACGCAGAGTAC
->primer_S
-AAGCAGTGGTATCAACGCAGAGTACATCGATCCCCCCCCCCCCTTT
-```
 ### 3.3) classify CCS by primer
 Here is an example for classifying CCS generate from PacBio official IsoSeq library construction protocol and `BGI patented multi-transcripts in one ZMW library construction protocol`.
 ```
